@@ -1,9 +1,10 @@
 import Image from "next/image";
-import TabScreen from "./components/tabs";
+import DescriptionTab from "./components/description";
 
 export default function Home() {
   return (
     <>
+    <DescriptionTab />
     </>
   );
 }

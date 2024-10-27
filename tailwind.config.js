@@ -10,7 +10,14 @@ module.exports = {
       colors: {
         background: "#FFF0DA",
         foreground: "#4B87C5",
+        foregroundlight: "#8EA9C9",
       },
+      fontFamily: {
+        body: ['Coiny'],
+        indie: ['Indie Flower'],
+        inter: ['Inter'],
+      },
+  
     },
   },
   plugins: [],

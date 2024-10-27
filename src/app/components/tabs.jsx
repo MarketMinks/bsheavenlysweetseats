@@ -6,7 +6,7 @@ export default function TabScreen() {
     <div className="w-full h-screen justify-center flex items-center flex-col  ">
       <h1 className="text-foreground text-2xl text-center">Our Food</h1>
       <p className="text-foreground text-center text-[50px] font-bold">Fresh. Homemade. Irresistible.</p>
-      <div className="absolute w-[90%] h-[324px] bg-[#8EA9C9] rounded-[42px] top-1/2 left-1/2 transform -translate-x-1/2 translate-y-1/5 z-0"></div>
+      <div className="absolute w-[90%] h-[324px] bg-[#8EA9C9] rounded-[42px] transform translate-y-52 z-0"></div>
       <div className="flex flex-row justify-center items-center w-full gap-20 mt-16 z-[1] px-[10%]">
         <div className="flex flex-col justify-center items-center gap-[17px]">
           <div className="max-w-60 max-h-[300px] rounded-[42px] border-4 border-[#8EA9C9] overflow-hidden ">

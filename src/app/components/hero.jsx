@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function HeroPage() {
   return (
-      <div className="bg-background w-full h-[90vh] border-b-[1px] border-foreground  grid grid-cols-2 justify-center items-center ">
+      <div className="bg-background w-full h-[90vh]   grid grid-cols-2 justify-center items-center ">
         <div className="flex justify-center items-center text-foreground flex-col">
           <h1 className="text-6xl text-center">
             Baked with love, 

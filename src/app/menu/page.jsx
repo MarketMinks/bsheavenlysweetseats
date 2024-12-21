@@ -1,6 +1,6 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Menu from "./menu";
+import Menu from "../components/menuDiv";
 
 export default function Home() {
   return (

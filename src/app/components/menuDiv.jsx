@@ -34,7 +34,7 @@ export default function Menu() {
 
       {/* Menu Section */}
       <div className="bg-background py-16 px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="px-[10%] mx-auto">
           <div className="flex justify-center space-x-4 mb-8">
             {menuCategories.map((category) => (
               <button
@@ -53,10 +53,10 @@ export default function Menu() {
           <div className="flex flex-row flex-wrap gap-8 justify-center rounded-md">
             {menuItems[selectedCategory].map((item, index) => (
               <Link href={`/item/${encodeURIComponent(item.id)}`} key={index}>
-                <div className="bg-white p-6 w-[250px] rounded-lg shadow-md flex justify-start items-center flex-col cursor-pointer">
-                  <Image src={item.image || "/placeholder.jpg"} alt="" className="w-full" width={1000} height={1000} />
-                  <h3 className="text-xl font-semibold mb-2 text-black">{item.name}</h3>
-                  <p className="text-gray-600 mb-4">{item.price}</p>
+                <div className=" w-[250px] h-[375px]  flex justify-start items-center flex-col cursor-pointer rounded-3xl overflow-hidden text-start border-2 border-foreground">
+                  <Image src={item.image || "/placeholder.jpg"} alt="" className="w-full h-[250px] object-cover object-top border-b-2 border-foreground " width={1000} height={1000} />
+                  <h3 className="text-xl font-semibold my-3 w-[80%] text-foreground">{item.name}</h3>
+                  <p className="text-foreground mb-4 w-[80%]">${item.price}</p>
                 </div>
               </Link>
             ))}

@@ -5,7 +5,7 @@ import Link from "next/link";
 import menuItems from "../menuitem";
 
 export default function Menu() {
-  const menuCategories = ["Cake", "Cupcake", "Cookies", "Pastries"];
+  const menuCategories = ["Cake", "Cupcake", "CheeseCake","Pies","Brownie"];
   const [selectedCategory, setSelectedCategory] = useState(menuCategories[0]);
 
 
@@ -50,7 +50,7 @@ export default function Menu() {
               </button>
             ))}
           </div>
-          <div className="flex flex-row flex-wrap gap-8 justify-center">
+          <div className="flex flex-row flex-wrap gap-8 justify-center rounded-md">
             {menuItems[selectedCategory].map((item, index) => (
               <Link href={`/item/${encodeURIComponent(item.id)}`} key={index}>
                 <div className="bg-white p-6 w-[250px] rounded-lg shadow-md flex justify-start items-center flex-col cursor-pointer">

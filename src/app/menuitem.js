@@ -12,6 +12,8 @@ const menuItems = {
     { name: "Strawberry", price: "30", id: "strawb", image: "", desc: "Soft and fruity strawberry-flavored cake." },
     { name: "Lemon", price: "30", id: "leemon", image: "", desc: "Tangy and refreshing lemon-flavored cake." },
     { name: "Banana Pudding Cake", price: "35", id: "bpcake", image: "/pbudding.png", desc: "A delightful banana-flavored cake inspired by classic pudding." },
+    { name: "Custom Cake", price: "0", id: "customcake", image: "", desc: "Design your own cake! Fill out the description below and I will get back to you to talk about pricing!" },
+
   ],
   Cupcake: [
     { name: "Strawberry Cupcake", price: "25", id: "strawberrycupcake", image: "", desc: "Sold by dozen. Light and fluffy cupcakes with strawberry flavor." },
@@ -24,11 +26,15 @@ const menuItems = {
     { name: "PB&J Cupcake", price: "35", id: "pbnj", image: "", desc: "Sold by dozen. Classic peanut butter and jelly flavor in cupcake form." },
     { name: "Rainbow Cupcake", price: "35", id: "raeinbew", image: "", desc: "Sold by dozen. Colorful and fun cupcakes for any celebration." },
     { name: "Red Velvet Cupcake", price: "30", id: "bababawll", image: "", desc: "Sold by dozen. Mini versions of the classic red velvet cake." },
+    { name: "Custom CupCake", price: "0", id: "customccake", image: "", desc: "Design your own Cupcakes sold by the dozen! Fill out the description below and I will get back to you to talk about pricing!" },
+
   ],
   CheeseCake: [
     { name: "Original Cheesecake", price: "40", id: "originalcheese", image: "", desc: "Classic creamy cheesecake with a graham cracker crust." },
     { name: "Original w/ Toppings Cheesecake", price: "45", id: "ogwtop", image: "", desc: "Creamy cheesecake topped with your choice of flavors." },
     { name: "Specialties Cheesecake", price: "50", id: "specal", image: "", desc: "Unique and gourmet cheesecakes for special occasions." },
+    { name: "Custom Cheesecake", price: "0", id: "customchake", image: "", desc: "Design your own CheeseCake! Fill out the description below and I will get back to you to talk about pricing!" },
+
   ],
  
   Pies: [
@@ -36,12 +42,16 @@ const menuItems = {
     { name: "BlueBerry Pie", price: "35", id: "bluepie", image: "", desc: "Sweet and tangy blueberry pie with a flaky crust." },
     { name: "Lemon Meringue Pie", price: "35", id: "lemonpie", image: "", desc: "Zesty lemon pie topped with a light meringue." },
     { name: "Sweet Potato Pie", price: "35", id: "sweetpotatopie", image: "/sweetpoppie.png", desc: "Creamy and spiced sweet potato filling in a flaky crust." },
+    { name: "Custom Pie", price: "0", id: "customcpai", image: "", desc: "Design your own Pie! Fill out the description below and I will get back to you to talk about pricing!" },
+
   ],
  
   Brownie: [
     { name: "Traditional Brownie", price: "30", id: "tradbownie", image: "/", desc: "Rich and fudgy traditional brownies." },
     { name: "Turtle Brownie", price: "40", id: "turtlebrownie", image: "", desc: "Brownies topped with caramel, pecans, and chocolate." },
     { name: "Gourmet Brownie", price: "50", id: "grownie", image: "/bwithtop.png", desc: "Premium brownies with decadent toppings." },
+    { name: "Custom Brownies", price: "0", id: "custombrownies", image: "", desc: "Design your own Brownies sold by the dozen! Fill out the description below and I will get back to you to talk about pricing!" },
+
   ],
 };
 

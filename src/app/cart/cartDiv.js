@@ -24,7 +24,7 @@ export default function Cart() {
     localStorage.setItem('cartItems', JSON.stringify(updatedItems));
   };
 
-  const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cartItems.reduce((sum, item) => sum + item.totalPrice * item.quantity, 0);
 
   return (
     <div className="px-4 py-8 w-screen max-w-[100%] min-h-screen bg-background text-foreground">
@@ -36,7 +36,7 @@ export default function Cart() {
           <div key={index} className="flex items-center border-b py-4">
             <div className="w-24 h-24 mr-4 relative">
               <Image
-                src={item.image}
+                src={item.image || '/placeholder.jpg'}
                 alt={item.name}
                 layout="fill"
                 objectFit="cover"
@@ -45,11 +45,16 @@ export default function Cart() {
             </div>
             <div className="flex-grow">
               <h2 className="text-xl">{item.name}</h2>
-              <p className="text-sm text-gray-500">{item.toppings+""}</p>
+              {item.toppings && item.toppings.length > 0 && (
+                <p className="text-sm text-gray-500">Toppings: {item.toppings.join(', ')}</p>
+              )}
+              {item.customDescription && (
+                <p className="text-sm text-gray-500">Custom Description: {item.customDescription}</p>
+              )}
             </div>
             <div className="text-right">
-              <p className="font-bold">${(item.price * item.quantity).toFixed(2)}</p>
-              <p className="text-sm text-gray-500">${item.price} each</p>
+              <p className="font-bold">${(item.totalPrice * item.quantity).toFixed(2)}</p>
+              <p className="text-sm text-gray-500">${item.totalPrice.toFixed(2)} each</p>
               <div className="flex items-center justify-end mt-2">
                 <button
                   onClick={() => updateQuantity(index, -1)}

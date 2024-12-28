@@ -8,7 +8,7 @@ export default function Header() {
         </a>
         <div className="flex space-x-16 text-foreground">
           <a href="/" className="text-lg md:text-2xl font-body ">Home </a>
-          <a href="true" className="text-lg md:text-2xl font-body ">About Me</a>
+          <a href="/about" className="text-lg md:text-2xl font-body ">About Me</a>
           <a href="/menu" className="text-lg md:text-2xl font-body ">Menu</a>
           <a href="true" className="text-lg md:text-2xl font-body ">Contact Me</a>
           <a href="/cart" className="text-lg md:text-2xl font-body ml-auto pr-4">Cart</a>

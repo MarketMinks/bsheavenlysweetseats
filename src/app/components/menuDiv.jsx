@@ -11,9 +11,13 @@ export default function Menu() {
 
   const backgroundImages = {
     Cake: "/cake-background.bmp",
-    Cupcake: "/cupcake-background.jpg",
+    Cupcake: "cake/strawberrycrunchcupcakes.png",
     Cookies: "/cookies-background.jpg",
     Pastries: "/pastries-background.jpg",
+    CheeseCake: "cake/strawlemoncake.png",
+    Brownie: "/bwithtop.png",
+    Pies: "/sweetpoppie.png",
+
   };
 
 
@@ -25,7 +29,7 @@ export default function Menu() {
           className="relative justify-center items-center flex-col w-full h-full bg-cover bg-center"
           style={{ backgroundImage: `url(${backgroundImages[selectedCategory]})` }}
         >
-          <div className="absolute inset-0 bg-background opacity-80"></div>
+          <div className="absolute inset-0 bg-background opacity-10"></div>
           <div className="absolute inset-0 flex justify-center items-center">
             <h1 className="text-foreground text-6xl font-bold">{selectedCategory}</h1>
           </div>

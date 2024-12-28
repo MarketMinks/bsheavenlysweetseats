@@ -60,18 +60,22 @@ export default function Checkout() {
   
 
   return (
+    <div className='bg-background h-screen w-screen'> 
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Checkout</h1>
-      <div className="mb-6">
-        <h2 className="text-xl font-semibold mb-2">Order Summary</h2>
+      <h1 className="text-3xl font-bold mb-6 text-black">Checkout</h1>
+      <div className="mb-6 bg-background ">
+        <h2 className="text-xl font-semibold mb-2 text-blue-700">Order Summary</h2>
         {cartItems.map((item, index) => (
-          <div key={index} className="flex justify-between items-center mb-2">
+          <div key={index} className="flex justify-between items-center mb-2 font-bold  text-red-700">
             <span>{item.name} x {item.quantity}</span>
             <span>${(item.price * item.quantity).toFixed(2)}</span>
           </div>
         ))}
         <div className="font-bold mt-2">
-          Total: ${cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}
+          <div className=' text-green-400 '> 
+          Total: $
+           {cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}
+           </div>
         </div>
       </div>
       <form onSubmit={handleSubmit} className="max-w-md">
@@ -92,7 +96,10 @@ export default function Checkout() {
         >
           Pay with Stripe
         </button>
+        <div className='text-black absolute bottom-40 left-60'>
+        Thank you for shopping with B,Please double check all items!           </div>
       </form>
+    </div>
     </div>
   );
 }

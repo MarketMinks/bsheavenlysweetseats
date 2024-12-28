@@ -12,14 +12,14 @@ export default function HeroPage() {
           for Everyone!
         </p>
         <div className="py-3 px-10 mt-4 rounded-3xl border-foreground border-[1px]">
-          <a href="/" className=" text-center text-3xl">
+          <a href="/menu" className=" text-center text-3xl">
           Order Online
           </a>
         </div>
         
         </div>
         <div className="relative justify-center items-center flex-col w-full h-full  bg-[url('/heroPNG.jpg')]  bg-cover">
-        <div className="absolute inset-0 bg-background opacity-80"></div>
+        <div className="absolute inset-0 bg-background opacity-10"></div>
   
         </div>
         

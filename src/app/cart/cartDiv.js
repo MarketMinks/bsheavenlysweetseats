@@ -45,6 +45,7 @@ export default function Cart() {
             </div>
             <div className="flex-grow">
               <h2 className="text-xl">{item.name}</h2>
+              <p className="text-sm text-gray-500">{item.toppings+""}</p>
             </div>
             <div className="text-right">
               <p className="font-bold">${(item.price * item.quantity).toFixed(2)}</p>

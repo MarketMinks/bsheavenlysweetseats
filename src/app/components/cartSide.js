@@ -33,7 +33,7 @@ export default function CartDrawer() {
           ) : (
             <>
               {cartItems.map((item, index) => (
-                <div key={index} className="flex items-center mb-4">
+                <div key={index} className="flex items-start mb-4">
                   <div className="w-16 h-16 relative mr-4">
                     <Image
                       src={item.image}
@@ -43,8 +43,16 @@ export default function CartDrawer() {
                       className="rounded"
                     />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-md font-semibold">{item.name}</h3>
+                    {/* Display description if available */}
+                    {item.description && (
+                      <p className="text-sm italic text-gray-600">
+                        {item.description}
+                      </p>
+                    )}
+                                  <p className="text-sm text-gray-500">{item.toppings+""}</p>
+
                     <p>Quantity: {item.quantity}</p>
                     <p>${(item.price * item.quantity).toFixed(2)}</p>
                   </div>

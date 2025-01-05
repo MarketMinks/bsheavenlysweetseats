@@ -81,7 +81,6 @@ export default function ItemPage({ params }) {
     
     setTimeout(() => setConfirmationMessage(''), 3000);
   };
-  
 
   return (
     <div className="bg-background min-h-screen w-full mx-auto px-4 py-8">
@@ -138,27 +137,29 @@ export default function ItemPage({ params }) {
               View Cart
             </button>
           )}
-          <div className="mt-8">
-            {Object.entries(TOPPINGS).map(([category, toppingList]) => (
-              <div key={category} className="mb-6">
-                <h3 className="text-xl font-semibold mb-2 text-black">{category}</h3>
-                <div className="grid grid-cols-2 gap-2">
-                  {toppingList.map((topping) => (
-                    <label key={topping} className="flex items-center space-x-2">
-                      <input
-                        type="checkbox"
-                        value={topping}
-                        checked={toppings.includes(topping)}
-                        onChange={() => handleToppingChange(topping)}
-                        className="w-4 h-4"
-                      />
-                      <span className="text-black">{topping}</span>
-                    </label>
-                  ))}
+          {!isCustomItem && (
+            <div className="mt-8">
+              {Object.entries(TOPPINGS).map(([category, toppingList]) => (
+                <div key={category} className="mb-6">
+                  <h3 className="text-xl font-semibold mb-2 text-black">{category}</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {toppingList.map((topping) => (
+                      <label key={topping} className="flex items-center space-x-2">
+                        <input
+                          type="checkbox"
+                          value={topping}
+                          checked={toppings.includes(topping)}
+                          onChange={() => handleToppingChange(topping)}
+                          className="w-4 h-4"
+                        />
+                        <span className="text-black">{topping}</span>
+                      </label>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       {!isCustomItem && (

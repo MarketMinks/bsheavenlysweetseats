@@ -102,7 +102,7 @@ export default function Checkout() {
           {error && <div className="text-red-500 mt-2">{error}</div>}
         </form>
         <div className='text-black mt-8'>
-          Thank you for shopping with B, Please double check all items!
+          Thank you for shopping with B, Please double check all items! If you orderd a custom cake theres a reason it cost 0$! I will get back to you via email with a price and a time to expect it!
         </div>
       </div>
     </div>

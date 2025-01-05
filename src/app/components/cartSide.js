@@ -61,7 +61,7 @@ export default function CartDrawer() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-md font-semibold">{item.name}</h3>
-                    <p className="text-sm text-gray-500">{item.toppings.join(', ')}</p>
+                    <p className="text-sm text-gray-500">{Array.isArray(item.toppings) ? item.toppings.join(', ') : ''}</p>
                     <p className="text-sm font-bold">${(item.totalPrice * item.quantity).toFixed(2)}</p>
                     <div className="flex items-center mt-2">
                       <button

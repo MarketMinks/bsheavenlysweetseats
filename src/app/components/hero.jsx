@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 export default function HeroPage() {
   return (
       <div className="bg-background w-full h-[90vh]   grid grid-cols-2 justify-center items-center ">

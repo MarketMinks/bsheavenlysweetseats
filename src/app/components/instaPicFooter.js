@@ -4,7 +4,7 @@ export default function InstaPicFooter() {
     <div className="w-full flex flex-wrap flex-row justify-center items-center py-8 bg-background gap-5 pb-20">
   {/* Main Gallery */}
     <div className="bg-foreground rounded-lg p-4 w-[220px] h-[220px] flex items-center justify-center">
-      <p className="text-white text-center text-sm font-bold">follow us<br/>@bsheavenly_sweetsandeats</p>
+      <p className="text-white text-center text-sm font-bold">Custom order deatils? Contact me! <br/>bhsweeteats@yahoo.com</p>
     </div>
     <div className="rounded-lg overflow-hidden w-[220px] h-[220px]">
       <Image 

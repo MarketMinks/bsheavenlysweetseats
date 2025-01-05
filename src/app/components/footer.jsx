@@ -7,21 +7,14 @@ export default function Footer() {
       <div className="bg-foreground w-full  flex justify-center min-h-[200px] items-center">
           <div className='text-center font-indie text-background'> 
               <div className=' flex flex-row space-x-6 px-52 '> 
-                <a href='true' className=''> 
+                <a href='https://www.facebook.com/p/Bs-Heavenly-Sweets-Eats-100067625027873/' className=''> 
                   <FaFacebookSquare className='w-[50px] h-[50px] text-background' />
                 </a>
-                <a href='true'> 
-                  <SiGmail  className='w-[50px] h-[50px] text-background'/>
-                </a>
-                <a href='true'> 
-                  <FaInstagram className='w-[50px] h-[50px] text-background'/>
-                </a>
-              </div>
+ </div> 
               <li className='text-background font-thin font-indie mt-2 space-x-4'>
-                  <a href='true'> @2024 B&apos;s Heavenly Sweets  </a>
-                  <a href='true'> Terms and Conditions</a>
+                  <a href='/'> @2024 B&apos;s Heavenly Sweets  </a>
                   <a href='true'> Refund Policy</a>
-                  <a href='true'> Privacy Policy</a>
+                  <a href='https://www.termsfeed.com/live/53d144c4-a095-44be-9aa5-618b8467234b'> Privacy Policy</a>
               </li>
           </div>
       </div>

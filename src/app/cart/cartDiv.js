@@ -53,8 +53,8 @@ export default function Cart() {
               )}
             </div>
             <div className="text-right">
-              <p className="font-bold">${(item.totalPrice * item.quantity).toFixed(2)}</p>
-              <p className="text-sm text-gray-500">${item.totalPrice.toFixed(2)} each</p>
+              <p className="font-bold">${(item.price * item.quantity).toFixed(2)}</p>
+              <p className="text-sm text-gray-500">${Number(item.price).toFixed(2)} each</p>
               <div className="flex items-center justify-end mt-2">
                 <button
                   onClick={() => updateQuantity(index, -1)}

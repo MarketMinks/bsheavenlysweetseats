@@ -24,7 +24,7 @@ export default function ItemPage({ params }) {
     .flat()
     .find((item) => item.id === decodeURIComponent(name));
 
-  const isCustomItem = item && item.price === "0";
+  const isCustomItem = item && (item.price === "0" || item.name.toLowerCase().includes('number'));
 
   useEffect(() => {
     if (item) {
@@ -64,21 +64,21 @@ export default function ItemPage({ params }) {
       uniqueId: `${item.id}-${toppings.sort().join('-')}-${isCustomItem ? customDescription : ''}`,
       customDescription: isCustomItem ? customDescription : undefined
     };
-    
+
     const existingItemIndex = cartItems.findIndex(
       (cartItem) => cartItem.uniqueId === newItem.uniqueId
     );
-  
+
     if (existingItemIndex !== -1) {
       cartItems[existingItemIndex].quantity += quantity;
       cartItems[existingItemIndex].totalPrice += totalPrice;
     } else {
       cartItems.push(newItem);
     }
-  
+
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     setConfirmationMessage(`Added ${quantity} ${item.name}(s) with toppings: ${toppings.join(', ')} to cart`);
-    
+
     setTimeout(() => setConfirmationMessage(''), 3000);
   };
 

@@ -13,19 +13,21 @@ const menuItems = {
     { name: "Lemon", price: "30", id: "leemon", image: "/lemoncake.jpg", desc: "Tangy and refreshing lemon-flavored cake." },
     { name: "Banana Pudding Cake", price: "35", id: "bpcake", image: "/pbudding.png", desc: "A delightful banana-flavored cake inspired by classic pudding." },
     { name: "Rum Cake", price: "40", id: "rumcake", image: "/rumcake.jpg", desc: "A delightful banana-flavored cake inspired by classic pudding." },
+    { name: "Number Cake", price: "75", id: "numbercake", image: "/Numbercake.jpg", desc: "Perfect for birthday parties just let me know what number!" },
 
-    { name: "Custom Cake", price: "0", id: "customcake", image: "/speccake.jpg", desc: "Design your own cake! Fill out the description below and I will get back to you to talk about pricing!" },
+
+    { name: "Custom Cake", price: "0", id: "customcake", image: "/AnotherCustomcake.jpg", desc: "Design your own cake! Fill out the description below and I will get back to you to talk about pricing!" },
   ],
   Cupcake: [
     { name: "Strawberry Cupcake", price: "25", id: "strawberrycupcake", image: "/strawberryccakes.jpg", desc: "Sold by dozen. Light and fluffy cupcakes with strawberry flavor." },
-    { name: "Lemon Cupcake", price: "25", id: "lemoncupcake", image: "", desc: "Sold by dozen. Zesty lemon cupcakes with a citrus glaze." },
+    { name: "Lemon Cupcake", price: "25", id: "lemoncupcake", image: "/leemoncupcake.png", desc: "Sold by dozen. Zesty lemon cupcakes with a citrus glaze." },
     { name: "Carrot Cupcake", price: "30", id: "ccake", image: "/carrotccake.jpg", desc: "Sold by dozen. Spiced cupcakes with grated carrots and creamy frosting." },
-    { name: "Banana Pudding Cupcake", price: "35", id: "bananaccake", image: "", desc: "Sold by dozen. Sweet banana cupcakes inspired by banana pudding." },
     { name: "Lemon&Blueberry Cupcake", price: "40", id: "lnbccake", image: "/Lemonblue.jpg", desc: "Sold by dozen. A refreshing blend of lemon and blueberry flavors." },
-    { name: "Lemon&Raspberry Cupcake", price: "40", id: "lemonnrccake", image: "", desc: "Sold by dozen. Tart lemon cupcakes with sweet raspberry notes." },
+    { name: "Lemon&Raspberry Cupcake", price: "40", id: "lemonnrccake", image: "/lemonraspccakes.png", desc: "Sold by dozen. Tart lemon cupcakes with sweet raspberry notes." },
     { name: "PB&J Cupcake", price: "35", id: "pbnj", image: "/pbnj.jpg", desc: "Sold by dozen. Classic peanut butter and jelly flavor in cupcake form." },
     { name: "Rainbow Cupcake", price: "35", id: "rainbowcupcake", image: "/rainbowccake.jpg", desc: "Sold by dozen. Colorful and fun cupcakes for any celebration." },
     { name: "Red Velvet Cupcake", price: "30", id: "redvelvetcupcake", image: "/RedVel.jpg", desc: "Sold by dozen. Mini versions of the classic red velvet cake." },
+    { name: "Number Cupcake", price: "75", id: "numbercupcake", image: "/numbercupcake.jpg", desc: "Perfect for birthday parties just let me know what number!" },
     { name: "Custom Cupcake", price: "0", id: "customcupcake", image: "/specccake.jpg", desc: "Design your own Cupcakes sold by the dozen! Fill out the description below and I will get back to you to talk about pricing!" },
   ],
   CheeseCake: [
@@ -34,16 +36,14 @@ const menuItems = {
     { name: "Specialties Cheesecake", price: "50", id: "specialcheesecake", image: "/Speccheese.jpg", desc: "Unique and gourmet cheesecakes for special occasions." },
   ],
   Pies: [
-    { name: "Apple Pie", price: "35", id: "applepie", image: "", desc: "Traditional apple pie with a buttery crust and spiced filling." },
-    { name: "BlueBerry Pie", price: "35", id: "bluepie", image: "", desc: "Sweet and tangy blueberry pie with a flaky crust." },
-    { name: "Lemon Meringue Pie", price: "35", id: "lemonpie", image: "", desc: "Zesty lemon pie topped with a light meringue." },
+    { name: "Apple Pie", price: "35", id: "applepie", image: "/applepie.jpg", desc: "Traditional apple pie with a buttery crust and spiced filling." },
+    { name: "Lemon Meringue Pie", price: "35", id: "lemonpie", image: "/lemonmerin.png", desc: "Zesty lemon pie topped with a light meringue." },
     { name: "Sweet Potato Pie", price: "35", id: "sweetpotatopie", image: "/sweetpoppie.png", desc: "Creamy and spiced sweet potato filling in a flaky crust." },
   ],
   Brownie: [
-    { name: "Traditional Brownie", price: "30", id: "traditionalbrownie", image: "", desc: "Rich and fudgy traditional brownies." },
+    { name: "Traditional Brownie", price: "30", id: "traditionalbrownie", image: "/tradbrown.jpg", desc: "Rich and fudgy traditional brownies." },
     { name: "Turtle Brownie", price: "40", id: "turtlebrownie", image: "/turtlebrown.jpg", desc: "Brownies topped with caramel, pecans, and chocolate." },
     { name: "Gourmet Brownie", price: "50", id: "grownie", image: "/bwithtop.png", desc: "Premium brownies with decadent toppings." },
-    { name: "Custom Brownies", price: "0", id: "custombrownies", image: "", desc: "Design your own Brownies sold by the dozen! Fill out the description below and I will get back to you to talk about pricing!" },
   ],
 };
 

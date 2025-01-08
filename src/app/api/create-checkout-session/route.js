@@ -3,10 +3,11 @@ import Stripe from 'stripe';
 
 
 export async function POST(request) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: '2023-10-16',
+  });
   try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: '2023-10-16',
-    });
+    
 
     
     const { email, cartItems } = await request.json();

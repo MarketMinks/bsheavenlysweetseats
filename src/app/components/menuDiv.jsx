@@ -5,7 +5,7 @@ import Link from "next/link";
 import menuItems from "../menuitem";
 
 export default function Menu() {
-  const menuCategories = ["Cake", "Cupcake", "CheeseCake","Pies","Brownie"];
+  const menuCategories = ["Cakes", "Cupcakes", "CheeseCakes","Pies","Brownies"];
   const [selectedCategory, setSelectedCategory] = useState(menuCategories[0]);
 
 

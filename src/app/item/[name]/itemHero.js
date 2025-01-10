@@ -7,7 +7,8 @@ import menuItems from '@/app/menuitem';
 
 const TOPPINGS = {
   '$2 Toppings': ['Strawberries', 'Blueberries', 'Turtle', 'Lemon', 'Raspberry', 'Coconut'],
-  '$3 Toppings': ['Icing', 'Whipped Cream', 'Chocolate Sauce', 'Caramel Sauce', 'Nuts', 'Sprinkles']
+  '$3 Toppings': ['Icing', 'Whipped Cream', 'Chocolate Sauce', 'Caramel Sauce', 'Nuts', 'Sprinkles'],
+  '$5 Fillings': ['Custard', 'Fruit', 'Cream', 'Mousse', 'Ganache', 'Curd']
 };
 
 export default function ItemPage({ params }) {
@@ -24,13 +25,16 @@ export default function ItemPage({ params }) {
     .flat()
     .find((item) => item.id === decodeURIComponent(name));
 
-  const isCustomItem = item && item.price === "0";
+  const isCustomItem = item && (item.price === "0" || item.name.toLowerCase().includes('number'));
 
   useEffect(() => {
     if (item) {
       const basePrice = parseFloat(item.price);
       const toppingPrice = toppings.reduce((acc, topping) => {
-        return acc + (TOPPINGS['$2 Toppings'].includes(topping) ? 2 : 3);
+        if (TOPPINGS['$2 Toppings'].includes(topping)) return acc + 2;
+        if (TOPPINGS['$3 Toppings'].includes(topping)) return acc + 3;
+        if (TOPPINGS['$5 Fillings'].includes(topping)) return acc + 5;
+        return acc;
       }, 0);
       setTotalPrice((basePrice + toppingPrice) * quantity);
     }
@@ -64,21 +68,21 @@ export default function ItemPage({ params }) {
       uniqueId: `${item.id}-${toppings.sort().join('-')}-${isCustomItem ? customDescription : ''}`,
       customDescription: isCustomItem ? customDescription : undefined
     };
-    
+
     const existingItemIndex = cartItems.findIndex(
       (cartItem) => cartItem.uniqueId === newItem.uniqueId
     );
-  
+
     if (existingItemIndex !== -1) {
       cartItems[existingItemIndex].quantity += quantity;
       cartItems[existingItemIndex].totalPrice += totalPrice;
     } else {
       cartItems.push(newItem);
     }
-  
+
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     setConfirmationMessage(`Added ${quantity} ${item.name}(s) with toppings: ${toppings.join(', ')} to cart`);
-    
+
     setTimeout(() => setConfirmationMessage(''), 3000);
   };
 
@@ -139,25 +143,32 @@ export default function ItemPage({ params }) {
           )}
           {!isCustomItem && (
             <div className="mt-8">
-              {Object.entries(TOPPINGS).map(([category, toppingList]) => (
-                <div key={category} className="mb-6">
-                  <h3 className="text-xl font-semibold mb-2 text-black">{category}</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    {toppingList.map((topping) => (
-                      <label key={topping} className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          value={topping}
-                          checked={toppings.includes(topping)}
-                          onChange={() => handleToppingChange(topping)}
-                          className="w-4 h-4"
-                        />
-                        <span className="text-black">{topping}</span>
-                      </label>
-                    ))}
+              {Object.entries(TOPPINGS).map(([category, toppingList]) => {
+                const filteredToppings =
+                  item.name.toLowerCase().includes("cupcake") && category === "$5 Fillings"
+                    ? toppingList
+                    : []; // Show only $5 Fillings for cupcakes and no other toppings
+
+                return filteredToppings.length > 0 ? ( // Render only if there are valid toppings
+                  <div key={category} className="mb-6">
+                    <h3 className="text-xl font-semibold mb-2 text-black">{category}</h3>
+                    <div className="grid grid-cols-2 gap-2">
+                      {filteredToppings.map((topping) => (
+                        <label key={topping} className="flex items-center space-x-2">
+                          <input
+                            type="checkbox"
+                            value={topping}
+                            checked={toppings.includes(topping)}
+                            onChange={() => handleToppingChange(topping)}
+                            className="w-4 h-4"
+                          />
+                          <span className="text-black">{topping}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ) : null;
+              })}
             </div>
           )}
         </div>

@@ -1,14 +1,15 @@
 'use client'
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 
-export default function SuccessPage() {
-  const [status, setStatus] = useState('Processing...');
-  const [error, setError] = useState(null);
-  const searchParams = useSearchParams();
+import { useSearchParams } from 'next/navigation'
+import { Suspense, useEffect, useState } from 'react'
+
+function SuccessContent() {
+  const [status, setStatus] = useState('Processing...')
+  const [error, setError] = useState(null)
+  const searchParams = useSearchParams()
 
   useEffect(() => {
-    const sessionId = searchParams.get('session_id');
+    const sessionId = searchParams.get('session_id')
     
     if (sessionId) {
       fetch('/api/payment-success', {
@@ -20,25 +21,25 @@ export default function SuccessPage() {
       })
       .then(response => {
         if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! status: ${response.status}`)
         }
-        return response.json();
+        return response.json()
       })
       .then(data => {
         if (data.success) {
-          setStatus('Payment successful! Check your email for confirmation.');
+          setStatus('Payment successful! Check your email for confirmation.')
         } else {
-          setStatus('There was an issue with your payment. Please contact support.');
-          setError(data.error || 'Unknown error occurred');
+          setStatus('There was an issue with your payment. Please contact support.')
+          setError(data.error || 'Unknown error occurred')
         }
       })
       .catch(error => {
-        console.error('Error:', error);
-        setStatus('An error occurred. Please try again later.');
-        setError(error.message);
-      });
+        console.error('Error:', error)
+        setStatus('An error occurred. Please try again later.')
+        setError(error.message)
+      })
     }
-  }, [searchParams]);
+  }, [searchParams])
 
   return (
     <div>
@@ -46,5 +47,13 @@ export default function SuccessPage() {
       <p>{status}</p>
       {error && <p>Error details: {error}</p>}
     </div>
-  );
+  )
+}
+
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SuccessContent />
+    </Suspense>
+  )
 }

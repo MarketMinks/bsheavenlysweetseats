@@ -33,20 +33,24 @@ const menuItems = {
     { name: "White Chocolate Raspberry  Cupcake", price: "45", id: "speccuake", image: "/specccake.jpg", desc: "Design your own Cupcakes sold by the dozen! White Chocolate cake, filled with a fresh raspberry compote, topped with a light and fluffy cream cheese buttercream frosting and garnished with fresh raspberries and white chocolate. " }
 ],
 
-  CheeseCakes: [
+Cheesecakes: [
     { name: "Original Cheesecake", price: "40", id: "originalcheese", image: "/ogcheesec.jpg", desc: "Classic creamy cheesecake with a graham cracker crust." },
-    { name: "Original w/ Toppings Cheesecake", price: "45", id: "ogwtop", image: "/ogcheesewtop.jpg", desc: "Creamy cheesecake topped with your choice of flavors." },
-    { name: "Specialties Cheesecake", price: "50", id: "specialcheesecake", image: "/Speccheese.jpg", desc: "Unique and gourmet cheesecakes for special occasions." },
+    { name: " Original Cheesecake w/Toppings", price: "45", id: "ogwtop", image: "/ogcheesewtop.jpg", desc: "Our original creamy cheesecake with your choice of topping" },
+    { name: "Specialty Cheesecakes", price: "50", id: "specialcheesecake", image: "/Speccheese.jpg", desc: "Unique and gourmet cheesecakes for special occasions." },
   ],
   Pies: [
-    { name: "Apple Pie", price: "35", id: "applepie", image: "/applepie.jpg", desc: "Traditional apple pie with a buttery crust and spiced filling." },
+    { name: "Apple Pie", price: "35", id: "applepie", image: "/applepie.jpg", desc: "Fresh cut apples, baked in sweet spices in a flaky crust." },
     { name: "Lemon Meringue Pie", price: "35", id: "lemonpie", image: "/lemonmerin.png", desc: "Zesty lemon pie topped with a light meringue." },
-    { name: "Sweet Potato Pie", price: "35", id: "sweetpotatopie", image: "/sweetpoppie.png", desc: "Creamy and spiced sweet potato filling in a flaky crust." },
+    { name: "Sweet Potato Pie", price: "35", id: "sweetpotatopie", image: "/sweetpoppie.png", desc: " Roasted sweet potatoes, cinnamon, nutmeg and other spices. Just like your grandma used to make, this Sweet Potato Pie is the one you want on your table for all holidays and special occasions!" },
   ],
   Brownies: [
-    { name: "Traditional Brownie", price: "30", id: "traditionalbrownie", image: "/tradbrown.jpg", desc: "Rich and fudgy traditional brownies." },
-    { name: "Turtle Brownie", price: "40", id: "turtlebrownie", image: "/turtlebrown.jpg", desc: "Brownies topped with caramel, pecans, and chocolate." },
-    { name: "Gourmet Brownie", price: "50", id: "grownie", image: "/bwithtop.png", desc: "Premium brownies with decadent toppings." },
+    { name: "Traditional Brownies", price: "30", id: "traditionalbrownie", image: "/tradbrown.jpg", desc: "Rich and fudgy traditional brownies." },
+    { name: "Turtle Brownie", price: "40", id: "turtlebrownie", image: "/turtlebrown.jpg", desc: "Our Traditional Brownies topped with caramel, rich chocolate and toasted pecans." },
+    { name: "Gourmet Brownies", price: "50", id: "grownie", image: "/bwithtop.png", desc: "Premium brownies with decadent toppings." },
+  ],
+  Catering: [
+    { name: " Custom Catering", price: "0", id: "cateringrequest", image: "/cateringtab.png", desc: "At B's sweets and eats we offer top tier catering! Please fill out the descrpition box below and inform me what you want." },
+
   ],
 };
 

@@ -5,18 +5,19 @@ import Link from "next/link";
 import menuItems from "../menuitem";
 
 export default function Menu() {
-  const menuCategories = ["Cakes", "Cupcakes", "CheeseCakes","Pies","Brownies"];
+  const menuCategories = ["Cakes", "Cupcakes", "Cheesecakes","Pies","Brownies" ,"Catering"];
   const [selectedCategory, setSelectedCategory] = useState(menuCategories[0]);
 
 
   const backgroundImages = {
-    Cake: "/cake-background.bmp",
-    Cupcake: "cake/strawberrycrunchcupcakes.png",
+    Cakes: "/cake-background.bmp",
+    Cupcakes: "cake/strawberrycrunchcupcakes.png",
     Cookies: "/cookies-background.jpg",
     Pastries: "/pastries-background.jpg",
-    CheeseCake: "cake/strawlemoncake.png",
-    Brownie: "/bwithtop.png",
+    Cheesecakes: "cake/strawlemoncake.png",
+    Brownies: "/bwithtop.png",
     Pies: "/sweetpoppie.png",
+Catering: "/catering.jpg"
 
   };
 

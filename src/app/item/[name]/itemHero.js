@@ -6,7 +6,9 @@ import Link from 'next/link';
 import menuItems from '@/app/menuitem';
 
 const TOPPINGS = {
-  '$2 Toppings': ['Strawberries', 'Blueberries', 'Turtle', 'Lemon', 'Raspberry', 'Coconut'],
+  '$2 Toppings': ['Cherry, Strawberry, Blueberry, Pineapple and Raspberry'],
+  '3$ Cheesecake Toppings': ["Cherry", "Strawberry", "Blueberry", "Pineapple", "Raspberry",],
+  '3$ Specailty Cheesecake Toppings': ["Carmel", "Turtle", "Banana Pudding", "Oreo", "Lemon", "Other"],
   '$3 Toppings': ['Icing', 'Whipped Cream', 'Chocolate Sauce', 'Caramel Sauce', 'Nuts', 'Sprinkles'],
   '$5 Fillings': ['Custard', 'Fruit', 'Cream', 'Mousse', 'Ganache', 'Curd']
 };

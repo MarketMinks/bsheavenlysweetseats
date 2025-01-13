@@ -6,9 +6,9 @@ import Link from 'next/link';
 import menuItems from '@/app/menuitem';
 
 const TOPPINGS = {
-  '$2 Toppings': ['Cherry, Strawberry, Blueberry, Pineapple and Raspberry'],
-  '3$ Cheesecake Toppings': ["Cherry", "Strawberry", "Blueberry", "Pineapple", "Raspberry",],
-  '3$ Specailty Cheesecake Toppings': ["Carmel", "Turtle", "Banana Pudding", "Oreo", "Lemon", "Other"],
+  '$2 Toppings': ['Cherry', 'Strawberry', 'Blueberry', 'Pineapple', 'Raspberry'],
+  '$3 Cheesecake Toppings': ['Cherry', 'Strawberry', 'Blueberry', 'Pineapple', 'Raspberry'],
+  '$3 Specialty Cheesecake Toppings': ['Carmel', 'Turtle', 'Banana Pudding', 'Oreo', 'Lemon','Other Toppings'],
   '$3 Toppings': ['Icing', 'Whipped Cream', 'Chocolate Sauce', 'Caramel Sauce', 'Nuts', 'Sprinkles'],
   '$5 Fillings': ['Custard', 'Fruit', 'Cream', 'Mousse', 'Ganache', 'Curd']
 };
@@ -22,12 +22,14 @@ export default function ItemPage({ params }) {
   const [recommendedItems, setRecommendedItems] = useState([]);
   const [confirmationMessage, setConfirmationMessage] = useState('');
   const [customDescription, setCustomDescription] = useState('');
+  const [otherTopping, setOtherTopping] = useState(''); // state for "Other Topping"
+  const [showOtherToppingInput, setShowOtherToppingInput] = useState(false); // state for showing input for custom topping
 
   const item = Object.values(menuItems)
     .flat()
     .find((item) => item.id === decodeURIComponent(name));
 
-  const isCustomItem = item && (item.price === "0" || item.name.toLowerCase().includes('number'));
+  const isCustomItem = item && (item.price === '0' || item.name.toLowerCase().includes('number'));
 
   useEffect(() => {
     if (item) {
@@ -35,6 +37,7 @@ export default function ItemPage({ params }) {
       const toppingPrice = toppings.reduce((acc, topping) => {
         if (TOPPINGS['$2 Toppings'].includes(topping)) return acc + 2;
         if (TOPPINGS['$3 Toppings'].includes(topping)) return acc + 3;
+        if (TOPPINGS['$3 Specialty Cheesecake Toppings'].includes(topping)) return acc + 3;
         if (TOPPINGS['$5 Fillings'].includes(topping)) return acc + 5;
         return acc;
       }, 0);
@@ -45,7 +48,7 @@ export default function ItemPage({ params }) {
   useEffect(() => {
     if (item) {
       const allItems = Object.values(menuItems).flat();
-      const filtered = allItems.filter(i => i.id !== item.id).sort(() => 0.5 - Math.random());
+      const filtered = allItems.filter((i) => i.id !== item.id).sort(() => 0.5 - Math.random());
       setRecommendedItems(filtered.slice(0, 4));
     }
   }, [item]);
@@ -53,11 +56,21 @@ export default function ItemPage({ params }) {
   if (!item) return <div>Loading...</div>;
 
   const handleToppingChange = (topping) => {
+    if (topping === 'Other Toppings') {
+      setShowOtherToppingInput(true); // show input for other toppings when "Other Toppings" is selected
+    } else {
+      setShowOtherToppingInput(false); // hide input when other toppings are deselected
+    }
+
     setToppings((prevToppings) =>
       prevToppings.includes(topping)
         ? prevToppings.filter((t) => t !== topping)
         : [...prevToppings, topping]
     );
+  };
+
+  const handleOtherToppingChange = (e) => {
+    setOtherTopping(e.target.value);
   };
 
   const addToCart = () => {
@@ -147,11 +160,15 @@ export default function ItemPage({ params }) {
             <div className="mt-8">
               {Object.entries(TOPPINGS).map(([category, toppingList]) => {
                 const filteredToppings =
-                  item.name.toLowerCase().includes("cupcake") && category === "$5 Fillings"
+                  item.name.toLowerCase().includes('specialty cheesecake') && category === '$3 Specialty Cheesecake Toppings'
                     ? toppingList
-                    : []; // Show only $5 Fillings for cupcakes and no other toppings
+                    : item.name.toLowerCase().includes('original cheesecake') && category === '$3 Cheesecake Toppings'
+                    ? toppingList
+                    : item.name.toLowerCase().includes('cupcake') && category === '$5 Fillings'
+                    ? toppingList
+                    : [];
 
-                return filteredToppings.length > 0 ? ( // Render only if there are valid toppings
+                return filteredToppings.length > 0 ? (
                   <div key={category} className="mb-6">
                     <h3 className="text-xl font-semibold mb-2 text-black">{category}</h3>
                     <div className="grid grid-cols-2 gap-2">
@@ -168,6 +185,21 @@ export default function ItemPage({ params }) {
                         </label>
                       ))}
                     </div>
+                    {showOtherToppingInput && toppings.includes('Other Toppings') && (
+                      <div className="mt-4">
+                        <label htmlFor="otherTopping" className="block text-sm font-medium text-gray-700">
+                          Enter your custom topping
+                        </label>
+                        <input
+                          id="otherTopping"
+                          type="text"
+                          value={otherTopping}
+                          onChange={handleOtherToppingChange}
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                          placeholder="Enter custom topping"
+                        />
+                      </div>
+                    )}
                   </div>
                 ) : null;
               })}
